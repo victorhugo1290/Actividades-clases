@@ -10,7 +10,7 @@
    #include<iostream>//declarar libreria
 using namespace std;
 int main() {
-    int nume1, contador=0, algo=0, repetir;//declarar variables  
+    int nume1, contador=0, repetir;//declarar variables  
     do {//iniciamos el ciclo
         cout<<"Ingrese un número: ";//le pedimos al usurio el valor a comparar 
         cin>>nume1;
