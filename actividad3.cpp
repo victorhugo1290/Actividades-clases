@@ -14,7 +14,7 @@ int main() {
     do {//iniciamos el ciclo
         cout<<"Ingrese un número: ";//le pedimos al usurio el valor a comparar 
         cin>>nume1;
-        if (nume1 > 0 && nume1 < 500) {//empezara a comparar para verificar que es lo que hara
+        if (nume1 > 0 && nume1 <= 500) {//empezara a comparar para verificar que es lo que hara
         for (int l = 5; l <= 500; l += 5) {
                 cout<<l<<endl;
             }
