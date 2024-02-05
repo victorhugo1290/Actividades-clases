@@ -1,3 +1,13 @@
+/************PRESENTACION************
+ NOMBRE: Victor Hugo Gutierrez Alvarado
+ FECHA: 04/FEBREEO/2024
+ PROGRAMA: Actividad4.cpp
+ CENTRO UNIVERSITARIO DE LOS ALTOS/ UNIVERSIDAD DE GUADALAJARA
+ INGENIERIA EN COMPUTACIón/ 2do SEMESTRE
+ PROFESOR: Carlos Javier Cruz Franco
+ DESCRIPCION: El programa hara la serie de fibonacci hasta el numero que ingreso el usuario
+***************************************/
+
 #include <iostream>//libreria 
 using namespace std;
 int  a, b, c, num1, eleg, opc;//declaracion de varibles 
