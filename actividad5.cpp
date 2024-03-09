@@ -132,6 +132,6 @@ case '7':
     } 
 
     // Mensaje de despedida al salir del programa
-    cout << "Adiós" << endl;
+    cerr << "Adiós" << endl;
 }
 
