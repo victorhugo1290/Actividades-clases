@@ -4,7 +4,7 @@
 #include <vector>
 #include <sstream>
 using namespace std;
-int opcion,cele,cantidad,sino,e, numerito=0, decision,ele,numero, numerito2=0, vaciar=0, opcoperaciones;
+int opcion,cele,cantidad,sino,e, numerito=0, decision,ele,numero, numerito2=0, vaciar=0;
 vector<string> universo, conjuntoUnion, conjuntoDiferencia;
 char entrada;
  string conjunto[20], conjunto2[20];
@@ -103,16 +103,7 @@ int main (){
                     
     break;
     case 3:
-      cout<<"Que operacion quieres utilizar"<<endl;
-      cout<<"1.Union "<<endl;
-      cout<<"2.Interseccion"<<endl;
-      cout<<"3.Diferencia"<<endl;
-      cout<<"4.Complemento"<<endl;
-                cin >> opcoperaciones;                                                                                            
-            switch (opcoperaciones)                                                                                             
-            {
-            case 1: 
-                conjuntoUnion.clear();
+     conjuntoUnion.clear();
                 for (const string &elem : conjunto)
                 {
                     conjuntoUnion.push_back(elem);
@@ -134,65 +125,13 @@ int main (){
                     }
                 }
 
-                cout << "La unión de los conjuntos es: " << endl; 
+                cout << "La unión de los conjuntos es: " << endl; // Mostrar la unión de los conjuntos
                 for (const string &elem : conjuntoUnion)
                 {
                     cout << "{" << elem << "}, ";
                 }
                 cout << endl;
-                break;
-            case 2: 
-                conjuntoUnion.clear();
-                for (const string &elem : conjunto)
-                {
-                    for (const string &elem2 : conjunto2)
-                    {
-                        if (elem == elem2)
-                        {
-                            conjuntoUnion.push_back(elem);
-                        }
-                    }
-                }
-                cout << "La intersección de los conjuntos es: " << endl; 
-                for (const string &elem : conjuntoUnion)
-                {
-                    cout << "{" << elem << "}, ";
-                }
-                cout << endl;
-                break;
-            case 3: 
-                conjuntoDiferencia.clear();
-                for (const string &elem : conjunto)
-                {
-                    bool found = false;
-                    for (const string &elem2 : conjunto2)
-                    {
-                        if (elem == elem2)
-                        {
-                            found = true;
-                            break;
-                        }
-                    }
-                    if (!found)
-                    {
-                        conjuntoDiferencia.push_back(elem);
-                    }
-                }
-                cout << "La diferencia de los conjuntos (conjunto1 - conjunto2) es: " << endl; 
-                for (const string &elem : conjuntoDiferencia)
-                {
-                    cout << "{" << elem << "}, ";
-                }
-                cout << endl;
-                break;
-            case 4: // Complemento de conjuntos
-                cout<<"No se puede indentifiacar el complemento del conjunto sin el universo"<<endl;
-                break;
-            default: // Opción no válida
-                cout << "Opción no válida" << endl;
-            }
-            break;
-    
+    break;
     case 4: 
     cout<<"De que conjunto deseas editar"<<endl;
     cout<<"1 o 2"<<endl;
