@@ -1,3 +1,12 @@
+/************PRESENTACION************
+ NOMBRE: Victor Hugo Gutierrez Alvarado
+ FECHA: 8/ABRIL/2024
+ PROGRAMA: Actividad7.cpp
+ CENTRO UNIVERSITARIO DE LOS ALTOS/ UNIVERSIDAD DE GUADALAJARA
+ INGENIERIA EN COMPUTACIón/ 2do SEMESTRE
+ PROFESOR: Carlos Javier Cruz Franco
+ DESCRIPCION: Operacion de conjuntos.
+***************************************/
 #include <iostream>
 #include <limits>
 #include <algorithm>
