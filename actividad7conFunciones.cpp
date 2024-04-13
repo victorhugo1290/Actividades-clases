@@ -29,6 +29,7 @@ if (cin.fail()) {                     // validacion del menu
      }
  }
 int menuprincipal(){
+
 cout << "\n--- Menú ---\n";
         cout << "1. ingresar conjunto"<<endl;
         cout << "2. Mostrar conjuntos"<<endl;
@@ -41,21 +42,9 @@ cout << "\n--- Menú ---\n";
         validar();
 return opcion;
 }
-int main (){
-    do
-    {
-        cout<<"Cual es la cantidad de elemento que quiere ingresar en el conjunto?"<<endl;
-    cin>>cantidad;
-    validar();
-    if (cantidad>=5)
-    {
-    while(flag)
-        {
-             opcion=menuprincipal();
-    switch (opcion)
-    {
-    case 1:
-        cout<<"quieres ingresar en el conjunto 1 o 2"<<endl;
+void conjuntos(){
+
+cout<<"quieres ingresar en el conjunto 1 o 2"<<endl;
         cin>>cele;
         validar();
         if (cele==1)
@@ -78,9 +67,15 @@ int main (){
             }
             else if(numerito2>=cantidad){cout<<"ya esta lleno el conjunto"<<endl;}
         }
-        break;
-    case 2:
-     cout<<"Que conjunto quieres imprimir 1 o 2"<< endl;
+
+
+
+
+
+
+}
+void imprimir(){
+cout<<"Que conjunto quieres imprimir 1 o 2"<< endl;
                     cin>>decision;
                     validar();
                     if (decision == 1)
@@ -101,9 +96,19 @@ int main (){
                         }
                     }
                     
-    break;
-    case 3:
-     conjuntoUnion.clear();
+}
+void operacionconjunto(){
+    int opcoperaciones;
+     cout<<"Que operacion quieres utilizar"<<endl;
+      cout<<"1.Union "<<endl;
+      cout<<"2.Interseccion"<<endl;
+      cout<<"3.Diferencia"<<endl;
+      cout<<"4.Complemento"<<endl;
+                cin >> opcoperaciones;                                                                                            
+            switch (opcoperaciones)                                                                                             
+            {
+            case 1: 
+                conjuntoUnion.clear();
                 for (const string &elem : conjunto)
                 {
                     conjuntoUnion.push_back(elem);
@@ -125,14 +130,65 @@ int main (){
                     }
                 }
 
-                cout << "La unión de los conjuntos es: " << endl; // Mostrar la unión de los conjuntos
+                cout << "La unión de los conjuntos es: " << endl; 
                 for (const string &elem : conjuntoUnion)
                 {
                     cout << "{" << elem << "}, ";
                 }
                 cout << endl;
-    break;
-    case 4: 
+                break;
+            case 2: 
+                conjuntoUnion.clear();
+                for (const string &elem : conjunto)
+                {
+                    for (const string &elem2 : conjunto2)
+                    {
+                        if (elem == elem2)
+                        {
+                            conjuntoUnion.push_back(elem);
+                        }
+                    }
+                }
+                cout << "La intersección de los conjuntos es: " << endl; 
+                for (const string &elem : conjuntoUnion)
+                {
+                    cout << "{" << elem << "}, ";
+                }
+                cout << endl;
+                break;
+            case 3: 
+                conjuntoDiferencia.clear();
+                for (const string &elem : conjunto)
+                {
+                    bool found = false;
+                    for (const string &elem2 : conjunto2)
+                    {
+                        if (elem == elem2)
+                        {
+                            found = true;
+                            break;
+                        }
+                    }
+                    if (!found)
+                    {
+                        conjuntoDiferencia.push_back(elem);
+                    }
+                }
+                cout << "La diferencia de los conjuntos (conjunto1 - conjunto2) es: " << endl; 
+                for (const string &elem : conjuntoDiferencia)
+                {
+                    cout << "{" << elem << "}, ";
+                }
+                cout << endl;
+                break;
+            case 4: // Complemento de conjuntos
+                cout<<"No se puede indentifiacar el complemento del conjunto sin el universo"<<endl;
+                break;
+            default: // Opción no válida
+                cout << "Opción no válida" << endl;
+            }
+}
+void editar(){
     cout<<"De que conjunto deseas editar"<<endl;
     cout<<"1 o 2"<<endl;
     cin>>ele;
@@ -168,8 +224,9 @@ int main (){
         cin>>valor;
         conjunto2[decision]=valor;
         cout<<"Se ha editado correctamente"<<endl;
-    break;
-    case 5:
+        }
+}
+void vacia(){
     cout<<"Que conjunto quieres vaciar"<<endl;
     cout<<"1 o 2"<<endl;
     cin>>decision;
@@ -194,13 +251,45 @@ int main (){
                      numerito2=0;
                      cout<<"Se ha Vaciado correctamente"<<endl;
     }
+    else
+    {
+        cout<<"Opcion no valida"<<endl;
+    }   
+    
+}
+int main (){
+    do
+    {
+        cout<<"Cual es la cantidad de elemento que quiere ingresar en el conjunto?"<<endl;
+    cin>>cantidad;
+    validar();
+    if (cantidad>=5)
+    {
+    while(flag)
+        {
+             opcion=menuprincipal();
+    switch (opcion)
+    {
+    case 1:
+        conjuntos();
+        break;
+    case 2:
+        imprimir();
+    break;
+    case 3:
+        operacionconjunto();
+     
+    break;
+    case 4: 
+        editar();
+    break;
+    case 5:
+        vacia();
     
     break;
     case 6:
     flag=false;
     break;
-    
-    }
     
     default:
         break;
