@@ -228,3 +228,15 @@ default:
     // Mensaje de despedida al salir del programa
     cout<<"Gracias por usar el programa"<<endl;
 }
+
+
+
+
+
+
+struct registro {//se abre la estructura 
+    string nombre;//variable string para nombre del alumnos, así nos permite tener espacios y cualquier cantidad 
+    string materia[pos];//variable string para materias AGREGAR MAS MATERIAS?
+    string maestro[po];//variable strting para nombre del maestro
+    float calificacion;//calificación variable 
+    }registro_alumno;//alumno1, alumno2, alumno3, alumno4;

@@ -1,0 +1,7 @@
+Nombre del alumno: victor
+Materia: sa, Maestro: sdf, Calificación: 78
+Materia: sdf, Maestro: sdf, Calificación: 89
+Materia: sdf, Maestro: sfd, Calificación: 89
+Materia: sf, Maestro: sdf, Calificación: 89
+Materia: gd, Maestro: gdf, Calificación: 90
+
